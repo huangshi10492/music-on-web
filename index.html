@@ -1,24 +1,41 @@
 ﻿<!DOCTYPE html>
 <html>
-<head> 
-<meta charset="utf-8"> 
-<title>music cool</title> 
+
+<head>
+    <meta charset="utf-8">
+    <title>music cool</title>
 </head>
+
 <body>
-网易云解析<br>
-项目地址<a href="https://gitee.com/huangshi10492/musiccool" target="_blank">https://gitee.com/huangshi10492/musiccool</a>
-<form role="form" action="https://api.mlwei.com/music/api/wy">
-搜索: <input type="text" name="id"><input type="submit" value="盘它"><br>
-<input type="checkbox" name="type" value="so">使用搜索（你也没得选）<br>
-<input type="checkbox" name="key" value="523077333">必须勾选<br>
-<input type="checkbox" name="cache" value="0">可以勾选<br>
-选择搜索结果数量
-<select name="nu">
-<option value="10" selected>10</option>
-<option value="20">20</option>
-<option value="30">30</option>
-<option value="40">40</option>
-</select>
-</form>
+    项目地址<a href="https://gitee.com/huangshi10492/musiccool"target="_blank">https://gitee.com/huangshi10492/musiccool</a><br>
+    网易云音乐解析<br>
+    <form role="form" action="https://api.mlwei.com/music/api/wy">
+        搜索: <input type="text" name="id"><input type="submit" value="盘它"><br>
+        <input type="hidden" name="type" value="so">
+        <input type="hidden" name="key" value="523077333">
+        <input type="checkbox" name="cache" value="0">可以勾选<br>
+        选择搜索结果数量
+        <select name="nu">
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+        </select>
+    </form><br><br>
+    QQ音乐解析<br>
+    <form role="form" action="https://api.mlwei.com/music/api">
+        搜索: <input type="text" name="id"><input type="submit" value="盘它"><br>
+        <input type="hidden" name="type" value="so">
+        <input type="hidden" name="key" value="523077333">
+        <input type="checkbox" name="cache" value="0">可以勾选<br>
+        选择搜索结果数量
+        <select name="nu">
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+        </select>
+    </form>
 </body>
+
 </html>
