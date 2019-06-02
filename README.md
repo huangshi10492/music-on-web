@@ -1,5 +1,5 @@
 ###这是一个傻逼的网址
-[json查看器](http:/http://www.bejson.com/color)
+[json查看器](http://www.bejson.com/color)
 ##更新日志
 #v0.2(2019.06.01)
 今天是六一儿童节呢[笑哭]
