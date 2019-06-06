@@ -5,15 +5,47 @@
     <meta charset="utf-8">
     <title>music cool</title>
 </head>
+<style type="text/css">
+    body {
+        text-align: center
+    }
+
+    body {
+        line-height: 175%;
+    }
+
+    body {
+        font-size: 25px;
+    }
+    input[type=text] {
+        padding: 2px 20px;
+        font-size: 25px;
+        border: 2px solid #66CCFF;
+        border-radius: 10px
+    }
+
+    select {
+        width: 10%;
+        font-size: 25px;
+        border-radius: 10px;
+    }
+
+    input[type=submit] {
+        font-size: 15px;
+        padding: 7px 100px;
+        border-radius: 10px;
+        background-color: #66CCFF;
+        border: none;
+    }
+</style>
 
 <body>
-    项目地址<a href="https://gitee.com/huangshi10492/musiccool"target="_blank">https://gitee.com/huangshi10492/musiccool</a><br>
-    网易云音乐解析<br>
-    <form role="form" action="https://api.mlwei.com/music/api/wy">
-        搜索: <input type="text" name="id"><input type="submit" value="盘它"><br>
+    <br><br>网易云音乐解析<br>
+    <form name="Form" action="https://api.mlwei.com/music/api/wy" target="_black">
+        搜索: <input type="text" name="id" autocomplete="off"><br>
+        <input type="submit" value="搜索"><br>
         <input type="hidden" name="type" value="so">
         <input type="hidden" name="key" value="523077333">
-        <input type="checkbox" name="cache" value="0">可以勾选<br>
         选择搜索结果数量
         <select name="nu">
             <option value="10" selected>10</option>
@@ -21,13 +53,14 @@
             <option value="30">30</option>
             <option value="40">40</option>
         </select>
-    </form><br><br>
+    </form><br>
     QQ音乐解析<br>
-    <form role="form" action="https://api.mlwei.com/music/api">
-        搜索: <input type="text" name="id"><input type="submit" value="盘它"><br>
+    <form name="Form" action="https://api.mlwei.com/music/api" target="_black">
+        搜索: <input type="text" name="id" autocomplete="off"><br>
+        <input type="submit" value="搜索"><br>
         <input type="hidden" name="type" value="so">
         <input type="hidden" name="key" value="523077333">
-        <input type="checkbox" name="cache" value="0">可以勾选<br>
+        <input type="hidden" name="cache" value="0">
         选择搜索结果数量
         <select name="nu">
             <option value="10" selected>10</option>
