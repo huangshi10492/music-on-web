@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>music cool</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
 </head>
 <style type="text/css">
     body {
         text-align: center
     }
-
     body {
         line-height: 175%;
     }
@@ -17,6 +18,7 @@
     body {
         font-size: 25px;
     }
+
     input[type=text] {
         padding: 2px 20px;
         font-size: 25px;
@@ -39,36 +41,72 @@
     }
 </style>
 
+
 <body>
-    <br><br>网易云音乐解析<br>
-    <form name="Form" action="https://api.mlwei.com/music/api/wy" target="_black">
-        搜索: <input type="text" name="id" autocomplete="off"><br>
-        <input type="submit" value="搜索"><br>
-        <input type="hidden" name="type" value="so">
-        <input type="hidden" name="key" value="523077333">
-        选择搜索结果数量
-        <select name="nu">
-            <option value="10" selected>10</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="40">40</option>
-        </select>
-    </form><br>
+    网易云音乐解析<br>
+    <input type="text" id='wyso' />
+    <button onclick="copyText1()">搜索</button>
+    <pre id="out"> </pre>
+    <script language="JavaScript">
+        function copyText1() {
+            var wyid = document.getElementById('wyso').value;
+            $.ajax({
+                type: "GET",
+                url: "https://api.mlwei.com/music/api/wy/?key=523077333&type=so&id=" + wyid,
+                dataType: 'json',
+                success: function (data) {
+                    var i;
+                    var html;//用一个变量来存储json中的数据
+                    for (i = 0; i < data.Body.length; i++) { //用for循环遍历数组将数据存入html变量中
+                        html += `<tr>
+                            <td>${data.Body[i].title}</td>
+                            <td>${data.Body[i].author}</td>
+                            <td>${data.Body[i].url}</td>
+                            </tr>`;
+                    }
+                    document.getElementById("box").innerHTML += html;
+                },
+                error: function () {
+                    document.getElementById("box").innerHTML = "no";
+                }
+            });
+        };
+    </script><br>
     QQ音乐解析<br>
-    <form name="Form" action="https://api.mlwei.com/music/api" target="_black">
-        搜索: <input type="text" name="id" autocomplete="off"><br>
-        <input type="submit" value="搜索"><br>
-        <input type="hidden" name="type" value="so">
-        <input type="hidden" name="key" value="523077333">
-        <input type="hidden" name="cache" value="0">
-        选择搜索结果数量
-        <select name="nu">
-            <option value="10" selected>10</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="40">40</option>
-        </select>
-    </form>
+    <input type="text" id='qqso' />
+    <button onclick="copyText()">搜索</button>
+    <script language="JavaScript">
+        function copyText() {
+            var qqid = document.getElementById('qqso').value;
+            $.ajax({
+                type: "GET",
+                url: "https://api.mlwei.com/music/api/?key=523077333&type=so&id=" + qqid,
+                dataType: 'json',
+                success: function (data) {
+                    var i;
+                    var html;//用一个变量来存储json中的数据
+                    for (i = 0; i < data.Body.length; i++) { //用for循环遍历数组将数据存入html变量中
+                        html += `<tr>
+                            <td>${data.Body[i].title}</td>
+                            <td>${data.Body[i].author}</td>
+                            <td>${data.Body[i].url}</td>
+                            </tr>`;
+                    }
+                    document.getElementById("box").innerHTML += html;
+                },
+                error: function () {
+                    document.getElementById("box").innerHTML = "no";
+                }
+            });
+        };
+    </script>
+    <table id="box" class="tab">
+        <tr>
+            <th>曲名</th>
+            <th>歌手</th>
+            <th>下载</th>
+        </tr>
+    </table>
 </body>
 
 </html>
