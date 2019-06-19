@@ -9,16 +9,12 @@
 </head>
 <style type="text/css">
     body {
+        line-height: 150%;
         text-align: center
     }
-    body {
-        line-height: 175%;
-    }
-
-    body {
-        font-size: 25px;
-    }
-
+table{
+    font-size: 20px;
+}
     input[type=text] {
         padding: 2px 20px;
         font-size: 25px;
@@ -26,15 +22,11 @@
         border-radius: 10px
     }
 
-    select {
-        width: 10%;
-        font-size: 25px;
+    button {
+        width: 15%;
         border-radius: 10px;
-    }
-
-    input[type=submit] {
-        font-size: 15px;
-        padding: 7px 100px;
+        font-size: 25px;
+        padding: 5px 100px;
         border-radius: 10px;
         background-color: #66CCFF;
         border: none;
@@ -43,12 +35,12 @@
 
 
 <body>
-    网易云音乐解析<br>
+    <h2>网易云音乐解析</h2>
     <input type="text" id='wyso' />
-    <button onclick="copyText1()">搜索</button>
+    <button onclick="AcopyText()">搜索</button>
     <pre id="out"> </pre>
     <script language="JavaScript">
-        function copyText1() {
+        function AcopyText() {
             var wyid = document.getElementById('wyso').value;
             $.ajax({
                 type: "GET",
@@ -56,7 +48,7 @@
                 dataType: 'json',
                 success: function (data) {
                     var i;
-                    var html;//用一个变量来存储json中的数据
+                    var html = "";//用一个变量来存储json中的数据
                     for (i = 0; i < data.Body.length; i++) { //用for循环遍历数组将数据存入html变量中
                         html += `<tr>
                             <td>${data.Body[i].title}</td>
@@ -64,7 +56,7 @@
                             <td>${data.Body[i].url}</td>
                             </tr>`;
                     }
-                    document.getElementById("box").innerHTML += html;
+                    document.getElementById("box").innerHTML = html;
                 },
                 error: function () {
                     document.getElementById("box").innerHTML = "no";
@@ -72,11 +64,11 @@
             });
         };
     </script><br>
-    QQ音乐解析<br>
+    <h2>QQ音乐解析</h2>
     <input type="text" id='qqso' />
-    <button onclick="copyText()">搜索</button>
+    <button onclick="BcopyText()">搜索</button>
     <script language="JavaScript">
-        function copyText() {
+        function BcopyText() {
             var qqid = document.getElementById('qqso').value;
             $.ajax({
                 type: "GET",
@@ -84,7 +76,7 @@
                 dataType: 'json',
                 success: function (data) {
                     var i;
-                    var html;//用一个变量来存储json中的数据
+                    var html = "";//用一个变量来存储json中的数据
                     for (i = 0; i < data.Body.length; i++) { //用for循环遍历数组将数据存入html变量中
                         html += `<tr>
                             <td>${data.Body[i].title}</td>
@@ -92,7 +84,7 @@
                             <td>${data.Body[i].url}</td>
                             </tr>`;
                     }
-                    document.getElementById("box").innerHTML += html;
+                    document.getElementById("box").innerHTML = html;
                 },
                 error: function () {
                     document.getElementById("box").innerHTML = "no";
