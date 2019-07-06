@@ -1,48 +1,57 @@
+
 function AcopyText() {
     var wyid = document.getElementById('wyso').value;
-    $.ajax({
-        type: "GET",
-        url: "https://api.mlwei.com/music/api/wy/?key=523077333&type=so&id=" + wyid,
-        dataType: 'json',
-        success: function (data) {
-            var i;
-            var html = "";//用一个变量来存储json中的数据
-            for (i = 0; i < data.Body.length; i++) { //用for循环遍历数组将数据存入html变量中
-                html += `<tr>
-                        <td>${data.Body[i].title}</td>
-                        <td>${data.Body[i].author}</td>
-                        <td>${data.Body[i].url}</td>
-                        <td>${data.Body[i].id}</td>
-                        </tr>`;
-            }
-            document.getElementById("box").innerHTML = html;
-        },
-        error: function () {
-            document.getElementById("box").innerHTML = "no";
-        }
+layui.use('table', function(){
+    var table = layui.table;
+    
+    table.render({
+      elem: '#test'
+      ,url:"https://api.mlwei.com/music/api/wy/?key=523077333&type=so&id=" + wyid
+      ,title: 'item'
+      ,cols: [[
+        {field:'id', title:'ID', width:250, type: "normal", }
+        ,{field:'title', title:'用户名', width:300, type: "normal"}
+        ,{field:'author', title:'邮箱', width:200, type: "normal"}
+        ,{field:'url', title:'性别', width:840, type: "normal"}
+      ]]
+      ,response: {
+        statusName: "Code",
+        statusCode: "OK"//重新规定成功的状态码为 200，table 组件默认为 0
+      }
+      ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
+        return {
+          "Code": res.Code, //解析接口状态
+          "data": res.Body //解析数据列表
+        };
+      }
     });
+  });
 };
 function BcopyText() {
     var qqid = document.getElementById('qqso').value;
-    $.ajax({
-        type: "GET",
-        url: "https://api.mlwei.com/music/api/?key=523077333&type=so&id=" + qqid,
-        dataType: 'json',
-        success: function (data) {
-            var i;
-            var html = "";//用一个变量来存储json中的数据
-            for (i = 0; i < data.Body.length; i++) { //用for循环遍历数组将数据存入html变量中
-                html += `<tr>
-                            <td>${data.Body[i].title}</td>
-                            <td>${data.Body[i].author}</td>
-                            <td>${data.Body[i].url}</td>
-                            <td>${data.Body[i].mid}</td>
-                            </tr>`;
-            }
-            document.getElementById("box").innerHTML = html;
-        },
-        error: function () {
-            document.getElementById("box").innerHTML = "no";
-        }
+layui.use('table', function(){
+    var table = layui.table;
+    
+    table.render({
+      elem: '#test'
+      ,url:"https://api.mlwei.com/music/api/?key=523077333&type=so&id=" + qqid
+      ,title: 'item'
+      ,cols: [[
+        {field:'mid', title:'ID', width:250, type: "normal", }
+        ,{field:'title', title:'用户名', width:300, type: "normal"}
+        ,{field:'author', title:'邮箱', width:200, type: "normal"}
+        ,{field:'url', title:'性别', width:840, type: "normal"}
+      ]]
+      ,response: {
+        statusName: "Code",
+        statusCode: "OK"//重新规定成功的状态码为 200，table 组件默认为 0
+      }
+      ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
+        return {
+          "Code": res.Code, //解析接口状态
+          "data": res.Body //解析数据列表
+        };
+      }
     });
+  });
 };
