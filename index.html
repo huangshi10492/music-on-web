@@ -63,7 +63,8 @@
             <div class="row">
                 <div class="col-5">
                     <form role="form">
-                        <input type="text" id="wyso" class="form-control">
+                        <input type="text" id="wyso" autocomplete="off" class="form-control" >
+                        <input style="display: none;" type=”text” />
                 </div>
                 <div class="col-1">
                     <button onclick="AcopyText()" type="button" class="btn btn-primary">搜索</button>
@@ -71,7 +72,8 @@
                 </form>
                 <div class="col-5">
                     <form role="form">
-                        <input type="text" id='qqso' class="form-control">
+                        <input type="text" id='qqso' autocomplete="off" class="form-control">
+                        <input style="display: none;" type=”text” />
                 </div>
                 <div class="col-1">
                     <button onclick="BcopyText()" type="button" class="btn btn-primary">搜索</button>
@@ -91,7 +93,8 @@
             <div class="row">
                 <div class="col-5">
                     <form role="form">
-                        <input type="text" id="wyid" class="form-control">
+                        <input type="text" id="wyid" autocomplete="off" class="form-control">
+                        <input style="display: none;" type=”text” />
                 </div>
                 <input type="hidden" id="wyidso"
                     value="https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=song&id=">
@@ -101,7 +104,8 @@
                 </form>
                 <div class="col-5">
                     <form role="form">
-                        <input type="text" id="qqid" class="form-control">
+                        <input type="text" id="qqid" autocomplete="off" class="form-control">
+                        <input style="display: none;" type=”text” />
                 </div>
                 <input type="hidden" id="qqidso"
                     value="https://api.mlwei.com/music/api/?key=523077333&cache=1&type=song&id=">

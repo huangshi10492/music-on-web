@@ -6,7 +6,7 @@ function AcopyText() {
 
     table.render({
       elem: '#test'
-      , url: "https://api.mlwei.com/music/api/wy/?key=523077333&type=so&id=" + wyid
+      , url: "https://api.mlwei.com/music/api/wy/?key=523077333&type=so&nu=30&id=" + wyid
       , title: 'item'
       , cols: [[
         { field: 'id', title: 'ID', type: "normal", }
