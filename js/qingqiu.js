@@ -8,11 +8,13 @@ function AcopyText() {
       elem: '#test'
       , url: "https://api.mlwei.com/music/api/wy/?key=523077333&type=so&nu=30&id=" + wyid
       , title: 'item'
+      ,toolbar: "turn"
       , cols: [[
         { field: 'id', title: 'ID', type: "normal", }
         , { field: 'title', title: '曲名', type: "normal" }
         , { field: 'author', title: '歌手', type: "normal" }
         , { field: 'url', title: '地址', type: "normal" }
+        ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
       ]]
       , response: {
         statusName: "Code",
@@ -36,6 +38,7 @@ function BcopyText() {
       elem: '#test'
       , url: "https://api.mlwei.com/music/api/?key=523077333&type=so&id=" + qqid
       , title: 'item'
+      , toolbar: true
       , cols: [[
         { field: 'mid', title: 'ID', type: "normal", }
         , { field: 'title', title: '曲名', type: "normal" }
