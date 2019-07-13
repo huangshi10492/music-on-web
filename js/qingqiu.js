@@ -62,16 +62,22 @@ function BcopyText() {
 layui.use('table', function () {
   var table = layui.table;
   table.on('tool(test)', function (obj) {
-    var id = obj.id;
-    console.log(obj)
+    var id = obj.data.id;
+    console.log(id)
     if (obj.event === 'turn in') {
       
+      $.ajax({
+        type: "GET",
+        url: "https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=song&id=" + id,
+        dataType: 'json',
+        success: function (data) {
+          ap.list.add(data)
+        },
+        error: function () {
+          console.log(error);
 
-
-
-
-
-
+        }
+      })
     };
   });
 });
