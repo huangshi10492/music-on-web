@@ -12,7 +12,8 @@
 </head>
 <style type="text/css">
     html {
-        overflow-x: hidden;
+        min-width: 950px;
+        max-width: 98%;
     }
 
     body {
@@ -31,10 +32,10 @@
         background-color: rgba(0, 0, 0, 0.1);
     }
 
-    .row {
-        margin-top: 5px;
-        margin-bottom: 15px;
-    }
+    [class*="col-"]{
+            padding: 5px;
+
+}
 </style>
 </style>
 
@@ -46,7 +47,7 @@
     <script src="layui/layui.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <div class="row">
+    <div class="row" >
         <div class="col-1">
         </div>
         <div class="col-10">
