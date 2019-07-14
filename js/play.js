@@ -9,32 +9,3 @@ var ap = new APlayer({
         autoplay: open,//自动播放打开，关闭改成 false 
         order: 'list',//顺序播放，随机播放改成random 
 });
-var CcopyText = function () {
-        var idso = document.getElementById('wyid').value;
-        var toidso = document.getElementById('wyidso').value;
-        $.ajax({
-                type: "GET",
-                url: toidso + idso,
-                dataType: 'json',
-                success: function (data) {
-                        ap.list.add(data)
-                },
-                error: function () {
-                        console.log(error);
-
-                }
-        })
-};
-var DcopyText = function () {
-        var idso = document.getElementById('qqid').value;
-        var toidso = document.getElementById('qqidso').value;
-        $.ajax({
-                type: "GET",
-                url: toidso + idso,
-                dataType: 'json',
-                success: function (data) {
-                        ap.list.add(data)
-                },
-
-        });
-};

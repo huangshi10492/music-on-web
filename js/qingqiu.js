@@ -4,7 +4,6 @@ function AcopyText() {
   var wyid = document.getElementById('wyso').value;
   layui.use('table', function () {
     var table = layui.table;
-
     table.render({
       elem: '#test'
       , url: "https://api.mlwei.com/music/api/wy/?key=523077333&type=so&nu=30&id=" + wyid
@@ -45,6 +44,7 @@ function BcopyText() {
         , { field: 'title', title: '曲名', type: "normal" }
         , { field: 'author', title: '歌手', type: "normal" }
         , { field: 'url', title: '地址', type: "normal" }
+        , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 150 }
       ]]
       , response: {
         statusName: "Code",
@@ -61,42 +61,41 @@ function BcopyText() {
 };
 layui.use('table', function () {
   var table = layui.table;
-  var reg = /^[a-zA-Z]+$/
-  var num=/^[0-9]+$/
+  var reg = /^[a-zA-Z0-9]+$/
+  var num = /^[0-9]+$/
   table.on('tool(test)', function (obj) {
     var id = obj.data.id;
+    var id = obj.data.mid;
     console.log(id)
     if (obj.event === 'turn in') {
-      if (reg(id)) {
+      if (reg.test(id)) {
         $.ajax({
           type: "GET",
-          url: "https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=song&id=" + id,
+          url: "https://api.mlwei.com/music/api/?key=523077333&cache=1&type=song&id=" + id,
           dataType: 'json',
           success: function (data) {
             ap.list.add(data)
           },
           error: function () {
-            console.log(error);
-
+            console.log("error");
           }
         })
       }
-      else{
-        if(num(id)){
+      else {
+        if (num.test(id)) {
           $.ajax({
             type: "GET",
-            url: "https://api.mlwei.com/music/api/?key=523077333&cache=1&type=song&id=" + id,
+            url: "https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=song&id=" + id,
             dataType: 'json',
             success: function (data) {
               ap.list.add(data)
             },
             error: function () {
-              console.log(error);
-  
+              console.log("error");
             }
           })
         }
-        else{
+        else {
           alert("错误")
         }
       }

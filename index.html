@@ -32,10 +32,10 @@
         background-color: rgba(0, 0, 0, 0.1);
     }
 
-    [class*="col-"]{
-            padding: 5px;
+    [class*="col-"] {
+        padding: 5px;
 
-}
+    }
 </style>
 </style>
 
@@ -47,7 +47,7 @@
     <script src="layui/layui.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <div class="row" >
+    <div class="row">
         <div class="col-1">
         </div>
         <div class="col-10">
@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-5">
                     <form role="form">
-                        <input type="text" id="wyso" autocomplete="off" class="form-control" >
+                        <input type="text" id="wyso" autocomplete="off" class="form-control">
                         <input style="display: none;" type=”text” />
                 </div>
                 <div class="col-1">
@@ -78,40 +78,6 @@
                 </div>
                 <div class="col-1">
                     <button onclick="BcopyText()" type="button" class="btn btn-primary">搜索</button>
-                </div>
-                </form>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <h2>网易ID</h2>
-                </div>
-                <div class="col">
-                    <h2>QQID</h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-5">
-                    <form role="form">
-                        <input type="text" id="wyid" autocomplete="off" class="form-control">
-                        <input style="display: none;" type=”text” />
-                </div>
-                <input type="hidden" id="wyidso"
-                    value="https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=song&id=">
-                <div class="col-1">
-                    <button onclick="CcopyText()" type="button" class="btn btn-primary">加入</button>
-                </div>
-                </form>
-                <div class="col-5">
-                    <form role="form">
-                        <input type="text" id="qqid" autocomplete="off" class="form-control">
-                        <input style="display: none;" type=”text” />
-                </div>
-                <input type="hidden" id="qqidso"
-                    value="https://api.mlwei.com/music/api/?key=523077333&cache=1&type=song&id=">
-                <div class="col-1">
-                    <button onclick="DcopyText()" type="button" class="btn btn-primary">加入</button>
                 </div>
                 </form>
             </div>
