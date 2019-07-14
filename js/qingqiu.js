@@ -14,7 +14,7 @@ function AcopyText() {
         , { field: 'title', title: '曲名', type: "normal" }
         , { field: 'author', title: '歌手', type: "normal" }
         , { field: 'url', title: '地址', type: "normal" }
-        , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 150 }
+        , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 75}
       ]]
       , response: {
         statusName: "Code",
@@ -44,7 +44,7 @@ function BcopyText() {
         , { field: 'title', title: '曲名', type: "normal" }
         , { field: 'author', title: '歌手', type: "normal" }
         , { field: 'url', title: '地址', type: "normal" }
-        , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 150 }
+        , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 75 }
       ]]
       , response: {
         statusName: "Code",

@@ -5,19 +5,15 @@
     <meta name="viewport"
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta charset="utf-8">
-    <title>music cool</title>
+    <title>music on web</title>
     <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
     <link rel="stylesheet" href="layui/css/layui.css">
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style type="text/css">
-    html {
-        min-width: 950px;
-        max-width: 98%;
-    }
-
     body {
         text-align: center
+        scroll="no"
     }
 
     input {
@@ -46,51 +42,69 @@
     <script src="https://cdn.bootcss.com/popper.js/1.15.0/popper.min.js"></script>
     <script src="layui/layui.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
     <div class="row">
         <div class="col-1">
         </div>
         <div class="col-10">
-            <div class="row">
-                <div class="col">
-                    <h2>网易云音乐解析</h2>
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">网易云音乐解析</li>
+                    <li>QQ音乐解析</li>
+                </ul>
+                <div class="layui-tab-content" style="height: 100px;">
+                    <div class="layui-tab-item layui-show">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-6">
+                                    <input type="text" id="wyso" autocomplete="off" class="form-control">
+                                    <input style="display: none;" type=”text” />
+                                </div>
+                                <div class="col-3">
+                                    <button onclick="AcopyText()" type="button" class="btn btn-primary">网易云搜索</button>
+                                </div>
+                                <div class="col-1"></div>
+                        </form>
+                    </div>
                 </div>
-                <div class="col">
-                    <h2>QQ音乐解析</h2>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-5">
+                <div class="layui-tab-item">
                     <form role="form">
-                        <input type="text" id="wyso" autocomplete="off" class="form-control">
-                        <input style="display: none;" type=”text” />
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-6">
+                                <input type="text" id='qqso' autocomplete="off" class="form-control">
+                                <input style="display: none;" type=”text” />
+                            </div>
+                            <div class="col-3">
+                                <button onclick="BcopyText()" type="button" class="btn btn-primary">QQ搜索</button>
+                            </div>
+                    </form>
+                    <div class="col-1"></div>
                 </div>
-                <div class="col-1">
-                    <button onclick="AcopyText()" type="button" class="btn btn-primary">搜索</button>
-                </div>
-                </form>
-                <div class="col-5">
-                    <form role="form">
-                        <input type="text" id='qqso' autocomplete="off" class="form-control">
-                        <input style="display: none;" type=”text” />
-                </div>
-                <div class="col-1">
-                    <button onclick="BcopyText()" type="button" class="btn btn-primary">搜索</button>
-                </div>
-                </form>
-            </div>
-            <table class="layui-table" id="test" lay-filter="test"></table>
-            <script type="text/html" id="barDemo">
-                <a class="layui-btn layui-btn-xs" lay-event="turn in">加入</a>
-              </script>
-            <script type="text/javascript" src="js/qingqiu.js"></script>
-            <div id="aplayer">
-                <script src="js/play.js"></script>
             </div>
         </div>
-        <div class="col-1"></div>
+        <table class="layui-table" id="test" lay-filter="test"></table>
+        <script type="text/html" id="barDemo">
+                <a  class="layui-btn-xs layui-btn-radius layui-btn" lay-event="turn in" >
+                    <i class="layui-icon" style="color: #FFFFFF;">&#xe608;</i>
+                </a>
+              </script>
+        <script>
+            layui.use('element', function () {
+                var element = layui.element;
+
+                //一些事件监听
+                element.on('tab(demo)', function (data) {
+                    console.log(data);
+                });
+            });
+        </script>
+        <script type="text/javascript" src="js/qingqiu.js"></script>
+        <div id="aplayer">
+            <script src="js/play.js"></script>
+        </div>
+    </div>
+    <div class="col-1"></div>
     </div>
 </body>
 
