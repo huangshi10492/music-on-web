@@ -61,17 +61,18 @@ function BcopyText() {
 };
 layui.use('table', function () {
   var table = layui.table;
-  var reg = /^[a-zA-Z0-9]+$/
+  var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]+$/
   var num = /^[0-9]+$/
   table.on('tool(test)', function (obj) {
     var id = obj.data.id;
-    var id = obj.data.mid;
+    var mid = obj.data.mid;
     console.log(id)
+    console.log(mid)
     if (obj.event === 'turn in') {
-      if (reg.test(id)) {
+      if (reg.test(mid)) {
         $.ajax({
           type: "GET",
-          url: "https://api.mlwei.com/music/api/?key=523077333&cache=1&type=song&id=" + id,
+          url: "https://api.mlwei.com/music/api/?key=523077333&cache=1&type=song&id=" + mid,
           dataType: 'json',
           success: function (data) {
             ap.list.add(data)
