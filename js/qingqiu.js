@@ -26,7 +26,7 @@ function AcopyText() {
           "data": res.Body //解析数据列表
         };
       }
-    });
+    },100);
   });
 };
 function BcopyText() {
@@ -56,7 +56,7 @@ function BcopyText() {
           "data": res.Body //解析数据列表
         };
       }
-    });
+    },100);
   });
 };
 layui.use('table', function () {
@@ -80,7 +80,7 @@ layui.use('table', function () {
           error: function () {
             console.log("error");
           }
-        })
+        },100)
       }
       else {
         if (num.test(id)) {
@@ -94,7 +94,7 @@ layui.use('table', function () {
             error: function () {
               console.log("error");
             }
-          })
+          },100)
         }
         else {
           alert("错误")
