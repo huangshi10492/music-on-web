@@ -12,8 +12,9 @@
 </head>
 <style type="text/css">
     body {
-        text-align: center
-        scroll="no"
+        background-color: rgba(0, 0, 0, 0.1);
+        width: 98%;
+        min-width: 550px;
     }
 
     input {
@@ -24,13 +25,8 @@
         width: 100%;
     }
 
-    body {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-
     [class*="col-"] {
         padding: 5px;
-
     }
 </style>
 </style>
@@ -56,7 +52,7 @@
                         <form role="form">
                             <div class="row">
                                 <div class="col-1"></div>
-                                <div class="col-6">
+                                <div class="col-7">
                                     <input type="text" id="wyso" autocomplete="off" class="form-control">
                                     <input style="display: none;" type=”text” />
                                 </div>
@@ -71,7 +67,7 @@
                     <form role="form">
                         <div class="row">
                             <div class="col-1"></div>
-                            <div class="col-6">
+                            <div class="col-7">
                                 <input type="text" id='qqso' autocomplete="off" class="form-control">
                                 <input style="display: none;" type=”text” />
                             </div>
@@ -82,30 +78,31 @@
                     <div class="col-1"></div>
                 </div>
             </div>
+
+
         </div>
-        <table class="layui-table" id="test" lay-filter="test"></table>
-        <script type="text/html" id="barDemo">
+        <div class="col-1"></div>
+    </div>
+    <div id="aplayer">
+        <script src="js/play.js"></script>
+    </div>
+    <table class="layui-table" id="test" lay-filter="test"></table>
+    <script type="text/html" id="barDemo">
                 <a  class="layui-btn-xs layui-btn-radius layui-btn" lay-event="turn in" >
                     <i class="layui-icon" style="color: #FFFFFF;">&#xe608;</i>
                 </a>
               </script>
-        <script>
-            layui.use('element', function () {
-                var element = layui.element;
+    <script>
+        layui.use('element', function () {
+            var element = layui.element;
 
-                //一些事件监听
-                element.on('tab(demo)', function (data) {
-                    console.log(data);
-                });
+            //一些事件监听
+            element.on('tab(demo)', function (data) {
+                console.log(data);
             });
-        </script>
-        <script type="text/javascript" src="js/qingqiu.js"></script>
-        <div id="aplayer">
-            <script src="js/play.js"></script>
-        </div>
-    </div>
-    <div class="col-1"></div>
-    </div>
+        });
+    </script>
+    <script type="text/javascript" src="js/qingqiu.js"></script>
 </body>
 
 </html>
