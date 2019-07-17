@@ -11,10 +11,10 @@ function AcopyText() {
       , toolbar: "turn"
       , cols: [[
         { field: 'id', title: 'ID', type: "normal", }
-        , { field: 'title', title: '曲名', type: "normal" }
+        , { field: 'title', title: '曲名', type: "normal"}
         , { field: 'author', title: '歌手', type: "normal" }
         , { field: 'url', title: '地址', type: "normal" }
-        , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 75}
+        , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 75 }
       ]]
       , response: {
         statusName: "Code",
@@ -26,7 +26,7 @@ function AcopyText() {
           "data": res.Body //解析数据列表
         };
       }
-    },100);
+    }, 100);
   });
 };
 function BcopyText() {
@@ -56,7 +56,7 @@ function BcopyText() {
           "data": res.Body //解析数据列表
         };
       }
-    },100);
+    }, 100);
   });
 };
 layui.use('table', function () {
@@ -76,11 +76,12 @@ layui.use('table', function () {
           dataType: 'json',
           success: function (data) {
             ap.list.add(data)
+            layer.msg('加入成功',{time:1000});
           },
           error: function () {
             console.log("error");
           }
-        },100)
+        }, 100)
       }
       else {
         if (num.test(id)) {
@@ -90,11 +91,12 @@ layui.use('table', function () {
             dataType: 'json',
             success: function (data) {
               ap.list.add(data)
+              layer.msg('加入成功',{time:1000});
             },
             error: function () {
               console.log("error");
             }
-          },100)
+          }, 100)
         }
         else {
           alert("错误")
